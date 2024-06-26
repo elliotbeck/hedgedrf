@@ -37,8 +37,6 @@ hedgedrf <- function(
     rf_fit <- ranger::ranger(
         formula,
         data,
-        replace = TRUE,
-        keep.inbag = TRUE,
         ...
     )
     # Random forest predictions and residuals on train data
