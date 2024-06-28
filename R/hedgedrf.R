@@ -24,9 +24,10 @@
 #' @export
 #'
 hedgedrf <- function(
-    formula = NULL, data = NULL, num_iter = NULL, kappa = 2, ...) {
+    formula = NULL, data = NULL, x = NULL,
+    y = NULL, num_iter = NULL, kappa = 2, ...) {
     if (kappa <= 0 || !is.numeric(kappa)) {
-        stop("kappa must be a positive real number")
+        stop("Kappa must be a positive real number")
     }
     if (is.factor(data[, all.vars(formula)[1]]) ||
         is.logical(data[, all.vars(formula)[1]])) {
@@ -34,19 +35,22 @@ hedgedrf <- function(
     }
 
     # Fit random forest
-    rf_fit <- ranger::ranger(
-        formula,
-        data,
-        ...
-    )
-    # Random forest predictions and residuals on train data
+    rf_fit <- ranger::ranger(formula = formula, data = data, x = x, y = y, ...)
+
+    # Random forest predictions on all trees
     rf_predictions_all <- predict(
         rf_fit,
-        data,
+        if (is.null(data)) x else data,
         predict.all = TRUE
     )$predictions
-    rf_residuals <- data[, all.vars(formula)[1]] -
-        rf_predictions_all
+
+    # Calculate residuals 
+    if (is.null(data)) {
+        rf_residuals <- y - rf_predictions_all
+    } else {
+        rf_residuals <- data[, all.vars(formula)[1]] -
+            rf_predictions_all
+    }
 
     # Calculate covariance matrix and mean vector of residuals
     mean_vector <- colMeans(rf_residuals)
