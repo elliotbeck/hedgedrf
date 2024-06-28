@@ -1,7 +1,7 @@
 Package: hedgedrf
 Title: An implementation of the Hedged Random Forest algorithm
 Version: 0.0.1
-Authors@R: 
+Author: 
     person(given="Elliot", family="Beck", email="elliot.beck@bf.uzh.ch", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8707-1706"))
 Maintainer: Elliot Beck <elliot.beck@bf.uzh.ch>
