@@ -4,7 +4,15 @@
 \alias{hedgedrf}
 \title{hedgedrf}
 \usage{
-hedgedrf(formula = NULL, data = NULL, num_iter = NULL, kappa = 2, ...)
+hedgedrf(
+  formula = NULL,
+  data = NULL,
+  x = NULL,
+  y = NULL,
+  num_iter = NULL,
+  kappa = 2,
+  ...
+)
 }
 \arguments{
 \item{formula}{Object of class \code{formula} or \code{character}
@@ -13,6 +21,13 @@ numerical variables.}
 
 \item{data}{Training data of class \code{data.frame}, \code{matrix},
 \code{dgCMatrix} (Matrix) or \code{gwaa.data} (GenABEL).}
+
+\item{x}{Predictor data (independent variables), alternative interface
+to data with formula or dependent.variable.name.}
+
+\item{y}{Response vector (dependent variable), alternative interface to
+data with formula or dependent.variable.name. For survival use a Surv()
+object or a matrix with time and status.}
 
 \item{num_iter}{Number of iterations for the optimization algorithm.}
 

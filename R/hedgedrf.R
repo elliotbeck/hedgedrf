@@ -5,10 +5,11 @@
 #' numerical variables.
 #' @param data Training data of class \code{data.frame}, \code{matrix},
 #' \code{dgCMatrix} (Matrix) or \code{gwaa.data} (GenABEL).
-#' @param x Predictor data (independent variables), alternative interface to data with formula or
-#' dependent.variable.name.
-#' @param y Response vector (dependent variable), alternative interface to data with formula or
-#' dependent.variable.name. For survival use a Surv() object or a matrix with time and status.
+#' @param x Predictor data (independent variables), alternative interface 
+#' to data with formula or dependent.variable.name.
+#' @param y Response vector (dependent variable), alternative interface to 
+#' data with formula or dependent.variable.name. For survival use a Surv() 
+#' object or a matrix with time and status.
 #' @param num_iter Number of iterations for the optimization algorithm.
 #' @param kappa Amount of regularization to apply to the tree weights. 1 implies
 #' no shorting, 2 implies no more than 50% shorting, etc.
