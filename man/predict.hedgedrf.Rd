@@ -15,6 +15,9 @@
 \item{...}{Additional arguments to pass to the \code{predict.ranger}
 function.}
 }
+\value{
+The hedged random forest predictions. An object of class \code{matrix}.
+}
 \description{
 hedgedrf prediction
 }

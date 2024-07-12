@@ -11,7 +11,8 @@
 #' then no demeaning takes place; if user inputs k = 1, then it signifies that
 #' the data data have already been demeaned.
 #'
-#' @return sigmahat (p*p): the QIS covariance matrix estimate
+#' @return sigmahat (p*p): the QIS covariance matrix estimate. An object of
+#' class \code{matrix}.
 #'
 get_cov_qis <- function(data, k = -1) {
     dim.data <- dim(data)

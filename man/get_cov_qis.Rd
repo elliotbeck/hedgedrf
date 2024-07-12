@@ -16,7 +16,8 @@ then no demeaning takes place; if user inputs k = 1, then it signifies that
 the data data have already been demeaned.}
 }
 \value{
-sigmahat (p*p): the QIS covariance matrix estimate
+sigmahat (p*p): the QIS covariance matrix estimate. An object of
+class \code{matrix}.
 }
 \description{
 Nonlinear shrinkage derived under Frobenius loss and its two cousins,

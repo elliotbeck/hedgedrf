@@ -5,7 +5,7 @@
 #' \code{gwaa.data} (GenABEL).
 #' @param ... Additional arguments to pass to the \code{predict.ranger}
 #' function.
-#'
+#' @return The hedged random forest predictions. An object of class \code{matrix}.
 #' @export
 predict.hedgedrf <- function(object, data, ...) {
     # Random forest predictions on test data
